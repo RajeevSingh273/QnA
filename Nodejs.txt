@@ -7,8 +7,8 @@ Q: What is an error-first callback?
 A: Error-first callbacks are used to pass errors and data as well. You have to pass the error as the first parameter, and it has to be checked to see if something went wrong. Additional arguments are used to pass data.
 
 Q: How can you avoid callback hells?
-A: There are lots of ways to solve the issue of callback hells:
-
+A: Callback hell is the result of heavily nested callbacks that make the code not only unreadable but also difficult to maintain.
+There are lots of ways to solve the issue of callback hells:
     modularization: break callbacks into independent functions
     use a control flow library, like async
     use generators with Promises
@@ -23,4 +23,35 @@ A: Promises are chainable concurrency primitive that acts as placeholder for a f
       })
         .then(console.log)
         .catch(console.error)
+
+Q: Which is the first argument typically passed to a Node.js callback handler?
+A: Typically, the first argument to any callback handler is an optional error object. The argument is null or undefined if there is no error. 
+
+
+Q: What is REPL in Node.js?
+A: REPL means Read-Eval-Print-Loop. It is a virtual environment that comes with Node.js. We can quickly test our JavaScript code in the Node.js REPL environment.
+
+To launch the REPL in Node.js, just opne the command prompt and type node. It will change the prompt to > in Windows and MAC.
+
+Q: What is the purpose of module.exports in Node.js?
+A: A module encapsulates related code into a single unit of code.
+
+Q: What is the difference between Asynchronous and Non-blocking?
+A: Asynchronous literally means not synchronous. We are making HTTP requests which are asynchronous, means we are not waiting for the server response. We continue with other block and respond to the server response when we received.
+
+The term Non-Blocking is widely used with IO. For example non-blocking read/write calls return with whatever they can do and expect caller to execute the call again. Read will wait until it has some data and put calling thread to sleep.
+
+Q:  What is EventEmitter in Node.js?
+A: All objects that emit events are instances of the EventEmitter class. These objects expose an eventEmitter.on() function that allows one or more functions to be attached to named events emitted by the object.
+
+When the EventEmitter object emits an event, all of the functions attached to that specific event are called synchronously.
+
+Q: What are “streams” in Node.js? Explain the different types of streams present in Node.js.
+A: Streams are objects that allow reading of data from the source and writing of data to the destination as a continuous process.
+There are four types of streams.
+      to facilitate the reading operation
+    to facilitate the writing operation
+    to facilitate both read and write operations
+    is a form of Duplex stream that performs computations based on the available input 
+
 
